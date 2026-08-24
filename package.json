@@ -1,0 +1,16 @@
+{
+  "name": "fluxcode",
+  "version": "0.1.0",
+  "description": "FluxCode — a beautiful all-in-one desktop coding studio for GitHub and Cloudflare.",
+  "main": "main.js",
+  "author": "Joel Engelman",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^38.1.0"
+  }
+}
