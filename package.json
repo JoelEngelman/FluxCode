@@ -1,54 +1,5 @@
 {
-  "name": "fluxcode",
-  "version": "0.2.0",
-  "description": "FluxCode — a beautiful all-in-one desktop coding studio for GitHub and Cloudflare.",
-  "main": "main.js",
-  "author": "Joel Engelman",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "start": "electron .",
-    "dev": "electron .",
-    "build:win": "electron-builder --win nsis --x64 --publish never"
-  },
-  "devDependencies": {
-    "electron": "^38.1.0",
-    "electron-builder": "^26.0.12"
-  },
-  "dependencies": {
-    "electron-updater": "^6.6.2"
-  },
-  "build": {
-    "appId": "com.joelengelman.fluxcode",
-    "productName": "FluxCode",
-    "asar": true,
-    "publish": {
-      "provider": "github",
-      "owner": "JoelEngelman",
-      "repo": "FluxCode",
-      "releaseType": "release"
-    },
-    "files": [
-      "main.js",
-      "preload.js",
-      "index.html",
-      "style.css",
-      "app.js",
-      "README.md",
-      "package.json",
-      "node_modules/electron-updater/**/*"
-    ],
-    "win": {
-      "target": [{ "target": "nsis", "arch": ["x64"] }],
-      "artifactName": "FluxCode-Setup-${version}.${ext}"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "FluxCode"
-    }
-  }
-}
+  "name":"fluxcode","version":"0.2.1","description":"FluxCode — an all-in-one desktop coding studio with the Flux programming language.","main":"main.js","author":"Joel Engelman","license":"MIT","private":true,
+  "scripts":{"start":"electron .","dev":"electron .","build:win":"electron-builder --win nsis --x64 --publish never"},
+  "devDependencies":{"electron":"^38.1.0","electron-builder":"^26.0.12"},"dependencies":{"electron-updater":"^6.6.2"},
+  "build":{"appId":"com.joelengelman.fluxcode","productName":"FluxCode","asar":true,"publish":{"provider":"github","owner":"JoelEngelman","repo":"FluxCode","releaseType":"release"},"files":["main.js","preload.js","index.html","style.css","app.js","flux.js","README.md","package.json","node_modules/electron-updater/**/*"],"win":{"target":[{"target":"nsis","arch":["x64"]}],"artifactName":"FluxCode-Setup-${version}.${ext}"},"nsis":{"oneClick":false,"perMachine":false,"allowToChangeInstallationDirectory":true,"createDesktopShortcut":true,"createStartMenuShortcut":true,"shortcutName":"FluxCode"}}}
