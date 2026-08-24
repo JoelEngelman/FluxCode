@@ -9,7 +9,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
-    "build:win": "electron-builder --win nsis --x64"
+    "build:win": "electron-builder --win nsis --x64 --publish never"
   },
   "devDependencies": {
     "electron": "^38.1.0",
@@ -19,6 +19,7 @@
     "appId": "com.joelengelman.fluxcode",
     "productName": "FluxCode",
     "asar": true,
+    "publish": null,
     "files": [
       "main.js",
       "preload.js",
