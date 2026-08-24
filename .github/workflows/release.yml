@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version (example: 0.1.0)'
+        description: 'Release version (example: 0.2.0)'
         required: true
-        default: '0.1.0'
+        default: '0.2.0'
 
 permissions:
   contents: write
@@ -33,7 +33,7 @@ jobs:
           npm version $version --no-git-tag-version --allow-same-version
 
       - name: Build Windows installer
-        run: npx electron-builder --win nsis --x64
+        run: npx electron-builder --win nsis --x64 --publish never
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -44,3 +44,4 @@ jobs:
           files: |
             dist/*.exe
             dist/*.blockmap
+            dist/latest*.yml
