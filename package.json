@@ -1,6 +1,6 @@
 {
   "name": "fluxcode",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "FluxCode — a beautiful all-in-one desktop coding studio for GitHub and Cloudflare.",
   "main": "main.js",
   "author": "Joel Engelman",
@@ -15,11 +15,19 @@
     "electron": "^38.1.0",
     "electron-builder": "^26.0.12"
   },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
   "build": {
     "appId": "com.joelengelman.fluxcode",
     "productName": "FluxCode",
     "asar": true,
-    "publish": null,
+    "publish": {
+      "provider": "github",
+      "owner": "JoelEngelman",
+      "repo": "FluxCode",
+      "releaseType": "release"
+    },
     "files": [
       "main.js",
       "preload.js",
@@ -27,12 +35,11 @@
       "style.css",
       "app.js",
       "README.md",
-      "package.json"
+      "package.json",
+      "node_modules/electron-updater/**/*"
     ],
     "win": {
-      "target": [
-        { "target": "nsis", "arch": ["x64"] }
-      ],
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
       "artifactName": "FluxCode-Setup-${version}.${ext}"
     },
     "nsis": {
